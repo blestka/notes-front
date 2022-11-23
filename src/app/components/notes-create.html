@@ -1,0 +1,89 @@
+<style>
+  .example-form {
+    margin: auto;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  td {
+    padding-right: 8px;
+    vertical-align: top;
+  }
+
+</style>
+
+<!-- Toolbar -->
+
+<div class="content" role="main">
+
+
+  <form [formGroup]="noteForm" class="example-form">
+
+    <table cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Your awesome note!</mat-label>
+            <br/>
+            <textarea
+              *ngIf="noteSaved==true"
+              matInput
+              id="text"
+              formControlName="text"
+              placeholder="Enter note text here"></textarea>
+            <br/>
+            <br/>
+          </mat-form-field>
+          <mat-label>Configuration</mat-label>
+          <p>
+            <mat-label>Choose expiration date</mat-label>
+            <input
+              matInput [matDatepickerFilter]="myFilter"
+              id="expiredAT"
+              formControlName="expiredAt"
+              [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </p>
+          <p>
+            <input type="password"
+                   matInput
+                   id="password"
+                   formControlName="password"
+                   placeholder="password">
+          </p>
+          <p>
+            <input type="password"
+                   matInput
+                   id="confirmPassword"
+                   formControlName="confirmPassword"
+                   placeholder="repeat password">
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <button mat-button color="primary"  (click)="share()">Share</button>
+  </form>
+
+  <form class="decor">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+      <h3>Написать нам</h3>
+      <input type="text" placeholder="Username">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Сообщение..." rows="3"></textarea>
+      <input type="submit" value="Отправить">
+    </div>
+  </form>
+
+</div>
+

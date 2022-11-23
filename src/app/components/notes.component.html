@@ -1,0 +1,38 @@
+<style>
+  .example-form {
+    margin: auto;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  td {
+    padding-right: 8px;
+    vertical-align: top;
+  }
+
+</style>
+
+<!-- Toolbar -->
+
+<div class="content" role="main">
+
+
+  <form class="example-form" [formGroup]="noteGetForm">
+          <mat-form-field class="example-full-width">
+            <br/>
+            <textarea
+              id="text"
+              formControlName="text"
+              matInput></textarea>
+            <br/>
+            <br/>
+          </mat-form-field>
+  </form>
+
+</div>
+
